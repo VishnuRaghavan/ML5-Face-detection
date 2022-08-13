@@ -69,8 +69,12 @@ function gotFace(err, results) {
     faceReady();
 }
 
-function keyPressed() {
+const clearInput = () => {
+    document.getElementById('collect').value = '';
+    textInp = '';
+}
 
+function keyPressed() {
     if (key == 'c') {
         state = "collection";
         console.log(`MODE: ${state}`);
@@ -88,6 +92,7 @@ function keyPressed() {
             console.log('adding input ', inputs);
             if (inputs) {
                 faceBrain.addData(inputs, obj);
+                clearInput();
             }
         } else if (state == 'training') {
             faceBrain.normalizeData();
@@ -96,8 +101,9 @@ function keyPressed() {
             predict();
         }
     }
-
 }
+
+
 
 function getInputs() {
     console.log('points', points);
