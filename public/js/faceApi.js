@@ -158,7 +158,7 @@ function whileTraining(epoch, loss) {
 }
 
 function finishedTraining() {
-    console.log('training finished');
+    console.log('Training Finished');
 }
 
 function predict() {
